@@ -1,13 +1,18 @@
 #background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
+    margin-left: 80px;
 }
 
 .logo {
     max-width: 160px;
+    margin-top: 30px;
+    
+    margin-bottom: 100px;
     
 }
 
 .title {
     color: white;
+    font-size: 4em;
 }
