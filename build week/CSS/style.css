@@ -16,14 +16,11 @@
 .title {
     color: white;
     font-size: 4em;
+    font-family: 'Outfit', sans-serif;
 }
 
 .container {
   margin-left: 50px;  
-}
-
-h2, h3 {
-    font-family: 'Outfit', sans-serif;
 }
 
 .div-title {
@@ -32,4 +29,6 @@ h2, h3 {
 
 .title-3 {
     font-size: 2em;
+    color: #d20094;
+    font-family: 'Outfit', sans-serif;
 }
