@@ -23,12 +23,17 @@ function loadQuestions(domandeObj){
     
     let randomNumber = Math.floor(Math.random()*10);
     let visitedIndex = [];
+    let questionsPlaceHolder = document.querySelector('div .question')
 
     while(visitedIndex.indexOf(randomNumber) != -1){
-        randomNumber = Math.floor(Math.random()*11);
+        randomNumber = Math.floor(Math.random()*10);
     }
 
-    domandeObj[randomNumber].question 
+    if(visitedIndex.length == domandeObj.length){
+        return 'domande finite'
+    }else{
+        questionsPlaceHolder.textContent = domandeObj[randomNumber].question
+    }
 
 
     visitedIndex.push(randomNumber);
