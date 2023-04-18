@@ -4,9 +4,10 @@ async function takeQuestion() {
 
 
         let bottone = document.querySelector('button');
+        let visitedIndex = [];
 
         bottone.addEventListener('click', function(){
-            loadQuestions(requests);
+            loadQuestions(requests, visitedIndex);
         });
 
 
@@ -24,10 +25,9 @@ takeQuestion();
 
 
 //funzione per caricare le domande
-function loadQuestions(domandeObj){
+function loadQuestions(domandeObj, visitedIndex){
             
     let randomNumber = Math.floor(Math.random()*10);
-    let visitedIndex = [];
     let questionsPlaceHolder = document.querySelector('.question')
     console.log(randomNumber);
 
@@ -37,6 +37,8 @@ function loadQuestions(domandeObj){
         console.log(domandeObj.results.length);
         
     }
+    visitedIndex.push(randomNumber);
+    console.log(visitedIndex);
     
     console.log(visitedIndex.length);    
 
@@ -46,7 +48,7 @@ function loadQuestions(domandeObj){
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question     
     }
 
-    visitedIndex.push(randomNumber);
+    
 }
 
 
@@ -54,7 +56,8 @@ function loadQuestions(domandeObj){
 //template
 function showButton(){
     let fourAnsw = document.querySelector(".multipleChoise");
-    let 
+    let templ;
+    
 }
 
 
