@@ -29,5 +29,7 @@
 .cerchio {
   display: flex;
   justify-content: flex-end;
-  transform: translate(10%, 30%);
+  position: absolute;
+  top: 100px;
+  right: 100px;
 }
