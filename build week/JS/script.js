@@ -1,38 +1,36 @@
- async function takeQuestion(){
+async function takeQuestion() {
     let requests = await fetch("http://bit.ly/strive_QUIZZ")
-   .then(res => res.json());
+        .then(res => res.json());
 
-   
-   
-    
-    for (let questionQuiz of requests){
+
+
+
+    for (let questionQuiz of requests) {
         let divQuestion = document.querySelector('#question');
         divQuestion.textContent = questionQuiz.question;
-        
+
     }
 
-    
+}
 
- }
-
- takeQuestion();
+takeQuestion();
 
 
 
-function loadQuestions(domandeObj){
-    
-    let randomNumber = Math.floor(Math.random()*10);
+function loadQuestions(domandeObj) {
+
+    let randomNumber = Math.floor(Math.random() * 10);
     let visitedIndex = [];
 
-    while(visitedIndex.indexOf(randomNumber) != -1){
-        randomNumber = Math.floor(Math.random()*11);
+    while (visitedIndex.indexOf(randomNumber) != -1) {
+        randomNumber = Math.floor(Math.random() * 10);
     }
 
-    domandeObj[randomNumber].question 
+    domandeObj[randomNumber].question
 
 
     visitedIndex.push(randomNumber);
-} 
+}
 
 
 
