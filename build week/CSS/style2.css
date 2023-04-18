@@ -1,3 +1,11 @@
+#background {
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  height: 1087px;
+  width: 1440px;
+
+}
+
 .multipleChoise{
   display: flex;
   justify-content: center;
@@ -15,4 +23,11 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
+  
+}
+
+.cerchio {
+  display: flex;
+  justify-content: flex-end;
+  transform: translate(10%, 30%);
 }
