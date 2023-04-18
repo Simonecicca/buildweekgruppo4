@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benchmarkpagina2</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benchmarkpagina2</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div id="background">
-<div class="container">
-<img class="logo" src="assets/epicode_logo.png" alt="Logo-epicode">
-<div>
-  <button>Primo bottone</button>
-  <button>Secondo bottone</button>
-  <button>Terzo bottone</button>
-  <button>Quarto bottone</button>
-</div>
+  <div id="background">
+    <div class="container">
+      <img class="logo" src="assets/epicode_logo.png" alt="Logo-epicode">
+      <template>
+        <div class="question"></div>
+        <div class="multipleChoise">
+          <button>Primo bottone</button>
+          <button>Secondo bottone</button>
+          <button>Terzo bottone</button>
+          <button>Quarto bottone</button>
+        </div>
+      </template>
+      <template>
+        <div class="question"></div>
+        <div class="trueFalse">
+          <button>vero</button>
+          <button>falso</button>
+        </div>
+      </template>
+      <div>
+        <h3>question 1/10</h3>
+      </div>
 
-<div>
-    <h3>question 1/10</h3>
-</div>
-    
+      <div id="timer"></div>
 
 
 
 
 
-
-</div>
- </div>
- <script src="JS/script.js"></script>
+    </div>
+  </div>
+  <script src="JS/script.js"></script>
 </body>
+
 </html>

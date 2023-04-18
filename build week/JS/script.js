@@ -1,37 +1,93 @@
 async function takeQuestion() {
-    let requests = await fetch("http://bit.ly/strive_QUIZZ")
+    let requests = await fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=easy")
         .then(res => res.json());
 
 
+        let bottone = document.querySelector('button');
+
+        bottone.addEventListener('click', function(){
+            loadQuestions(requests);
+        });
 
 
-    for (let questionQuiz of requests) {
-        let divQuestion = document.querySelector('#question');
-        divQuestion.textContent = questionQuiz.question;
 
-    }
+
+    // for (let questionQuiz of requests) {
+    //     let divQuestion = document.querySelector('#question');
+    //     divQuestion.textContent = questionQuiz.question;
+
+    // }
 
 }
 
 takeQuestion();
 
 
-
-function loadQuestions(domandeObj) {
-
-    let randomNumber = Math.floor(Math.random() * 10);
+//funzione per caricare le domande
+function loadQuestions(domandeObj){
+            
+    let randomNumber = Math.floor(Math.random()*10);
     let visitedIndex = [];
-    let questionsPlaceHolder = document.querySelector('div .question')
+    let questionsPlaceHolder = document.querySelector('.question')
+    console.log(randomNumber);
 
     while(visitedIndex.indexOf(randomNumber) != -1){
         randomNumber = Math.floor(Math.random()*10);
+        console.log(randomNumber);
+        console.log(domandeObj.results.length);
+        
     }
+    
+    console.log(visitedIndex.length);    
 
-    domandeObj[randomNumber].question 
-
+    if(visitedIndex.length == domandeObj.results.length){
+        questionsPlaceHolder.textContent = 'domande finite'
+    }else{
+        questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question     
+    }
 
     visitedIndex.push(randomNumber);
 }
 
 
 
+//template
+function showButton(){
+    let fourAnsw = document.querySelector(".multipleChoise");
+    let 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TIMER
+
+let timer = new Date("Jan 5, 2024 15:37:25").getTime();
+let x = setInterval(function(){
+    let now = new Date().getTime()
+    let interval = timer - now;
+    let seconds = Math.floor((interval % (1000 * 61)) / 1000);
+    document.querySelector("#timer").innerHTML = seconds;
+
+    if (interval < 0) {
+        clearInterval(x);
+        document.querySelector("#timer").innerHTML = "finish";
+    }
+    },1000);

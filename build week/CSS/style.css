@@ -20,7 +20,7 @@
 }
 
 .container {
-  margin-left: 50px;  
+  margin-left: 100px;  
 }
 
 .div-title {
@@ -31,4 +31,31 @@
     font-size: 2em;
     color: #d20094;
     font-family: 'Outfit', sans-serif;
+    margin-bottom: 10px;
+}
+
+p, li {
+    color: white;
+}
+
+.para {
+    font-family:'Inter', sans-serif;  
+}
+
+#timer {
+    color: blue;
+}
+
+.par1 {
+    margin-bottom: 30px;
+}
+
+.ul {
+    margin-bottom: 40px;
+    
+    
+}
+
+.span {
+    font-style: bold;
 }
