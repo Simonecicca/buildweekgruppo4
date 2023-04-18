@@ -1,7 +1,8 @@
 #background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
-    margin-left: 80px;
+    height: 1087px;
+
 }
 
 .logo {
@@ -15,4 +16,20 @@
 .title {
     color: white;
     font-size: 4em;
+}
+
+.container {
+  margin-left: 50px;  
+}
+
+h2, h3 {
+    font-family: 'Outfit', sans-serif;
+}
+
+.div-title {
+    margin-bottom: 20px;
+}
+
+.title-3 {
+    font-size: 2em;
 }
