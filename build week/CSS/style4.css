@@ -8,7 +8,38 @@
 .logo {
     max-width: 160px;
     margin-top: 30px;
-    
     margin-bottom: 100px;
     
+}
+
+.title {
+    color: white;
+    font-size: 2em;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.testo {
+    color: white;
+    font-size: 1em;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+.stella {
+    text-align: center;
+    background-repeat: repeat 10;
+    width: calc(100% / 10);
+    height: 100%;
+    float:left;
+}
+
+
+
+.bottonepagina4:hover {
+text-align: center;
+background-color:#00FFFF;
+color: rgb(26, 26, 26);
 }

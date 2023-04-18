@@ -1,0 +1,18 @@
+.multipleChoise{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}  
+
+#timer {
+  display: inline-block;
+  color: white;
+  border: 10px solid blue;
+  text-align: center;
+  background: transparent;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

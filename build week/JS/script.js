@@ -48,7 +48,37 @@ function loadQuestions(domandeObj, visitedIndex){
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question     
     }
 
+    return randomNumber;
+
     
+}
+
+function loadTrueFalse(domandeObj, indice){
+
+    let firstButton = document.querySelector('#firstButton');
+    let secondButton = document.querySelector('#secondButton');
+
+    firstButton.textContent = 'True'
+    secondButton.textContent = 'False'
+
+    
+
+}
+
+function load4Answers(domandeObj, indice){
+
+    let answers = [];
+    let indiceRandom = Math.floor(Math.random()*4);
+
+    let correctAnswer = domandeObj.results[indice].correct_answer;
+
+    for (answer of domandeObj.results[indice].incorrect_answer){
+        answers.push(answer)
+    }
+
+    answers.splice(indiceRandom, 0, correctAnswer)
+
+    console.log(answers);
 }
 
 
@@ -57,7 +87,7 @@ function loadQuestions(domandeObj, visitedIndex){
 function showButton(){
     let fourAnsw = document.querySelector(".multipleChoise");
     let templ;
-    
+
 }
 
 
@@ -87,7 +117,7 @@ let x = setInterval(function(){
     let now = new Date().getTime()
     let interval = timer - now;
     let seconds = Math.floor((interval % (1000 * 61)) / 1000);
-    document.querySelector("#timer").innerHTML = seconds;
+    document.querySelector("#timer").innerHTML = "seconds <br>" + seconds + "<br>remaning";
 
     if (interval < 0) {
         clearInterval(x);

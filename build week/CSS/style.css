@@ -15,7 +15,7 @@
 
 .title {
     color: white;
-    font-size: 4em;
+    font-size: 60px;
     font-family: 'Outfit', sans-serif;
 }
 
@@ -32,19 +32,16 @@
     color: #d20094;
     font-family: 'Outfit', sans-serif;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
-p, li {
-    color: white;
-}
 
 .para {
-    font-family:'Inter', sans-serif;  
+    font-family:'Inter', sans-serif;
+    color: white; 
 }
 
-#timer {
-    color: blue;
-}
+
 
 .par1 {
     margin-bottom: 30px;
@@ -52,10 +49,25 @@ p, li {
 
 .ul {
     margin-bottom: 40px;
-    
-    
+      
 }
 
 .span {
-    font-style: bold;
+    font-weight: bold;
+}
+
+.list {
+    font-family:'Inter', sans-serif;
+    color: white;
+    margin-top: 10px;
+}
+
+.bottom {
+   display: inline-block;
+}
+
+.button-p {
+    background-color: #00FFFF;
+    border: none;
+    text-transform: uppercase;
 }
