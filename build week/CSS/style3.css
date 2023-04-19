@@ -9,7 +9,6 @@
 .logo {
     max-width: 160px;
     margin-top: 30px;
-    margin-bottom: 100px;
     margin-left: 50px;
     
 }
@@ -41,10 +40,14 @@
    margin-top: 30px;
    color: white;
    align-self: center;
+   font-family:'Inter', sans-serif;
 }
 
 .esamepassato {
     text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    
 }
 
 .certificate {
@@ -53,4 +56,32 @@
 
 .passed {
     margin-bottom: 20px;
+    font-weight: bold;
+    color: #00FFFF;
+
+}
+
+.rispostecorrette {
+    
+}
+
+.divbottone {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 60px;
+}
+
+.bottonepagina3 {
+    color: white;
+    background-color: transparent;
+    border: 2px white solid;
+    font-family:'Inter', sans-serif;
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+}
+
+.percentuale {
+    font-size: 2rem;
 }
