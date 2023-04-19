@@ -8,7 +8,7 @@ async function takeQuestion() {
 
         bottone.addEventListener('click', function(){
             let indiceVisitato = loadQuestions(requests, visitedIndex);
-            load4Answers(requests, 0);
+            load4Answers(requests, indiceVisitato);
         });
 
 
