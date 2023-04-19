@@ -112,3 +112,51 @@
     width: 25px;
     height: 25px;
   }
+
+/* pagina2 */
+#background {
+  background-image: url(../assets/bg.jpg);
+  background-size: cover;
+  height: 1087px;
+  width: 1440px;
+
+}
+
+.multipleChoise{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}  
+
+#timer {
+  display: inline-block;
+  color: white;
+  border: 10px solid blue;
+  text-align: center;
+  background: transparent;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  
+}
+
+.cerchio {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 80px;
+  right: 550px;
+}
+
+.question{
+    color: white;
+    font-size: 4rem;
+    font-family: 'Outfit', sans-serif;
+    word-wrap: break-word;
+    line-height: 100px;
+    text-align: center;
+    padding-top:200px;
+    padding-left: 130px;
+}
