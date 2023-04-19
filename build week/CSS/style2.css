@@ -30,6 +30,15 @@
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  top: 100px;
-  right: 100px;
+  top: 80px;
+  right: 550px;
+}
+
+.question{
+    color: white;
+    font-size: 3.5rem;
+    font-family: 'Outfit', sans-serif;
+    word-wrap: break-word;
+    line-height: 100px;
+    text-align: center;
 }
