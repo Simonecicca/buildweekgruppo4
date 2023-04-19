@@ -53,40 +53,60 @@ function loadQuestions(domandeObj, visitedIndex){
     
 }
 
-function loadTrueFalse(domandeObj, indice){
 
-    let firstButton = document.querySelector('#firstButton');
-    let secondButton = document.querySelector('#secondButton');
 
-    firstButton.textContent = 'True'
-    secondButton.textContent = 'False'
-
-    
-
-}
+//funzione per caricare le domande
 
 function load4Answers(domandeObj, indice){
 
     let answers = [];
     let indiceRandom = Math.floor(Math.random()*4);
-
+    let incorrectAnswer = domandeObj.results[indice].incorrect_answers;
     let correctAnswer = domandeObj.results[indice].correct_answer;
 
-    for (answer of domandeObj.results[indice].incorrect_answer){
+    
+    console.log(incorrectAnswer);
+    console.log(correctAnswer);
+
+    for (let answer of incorrectAnswer){
         answers.push(answer)
     }
 
     answers.splice(indiceRandom, 0, correctAnswer)
 
     console.log(answers);
+
+    
 }
 
 
 
-//template
-function showButton(){
-    let fourAnsw = document.querySelector(".multipleChoise");
-    let templ;
+//template per pagina 2
+
+
+
+
+let proceedButton = document.querySelector(".button_p");
+proceedButton.addEventListener('click', function(){
+    document.querySelector("div.button_p");
+    showP2();
+    hidePage1();
+})
+
+function hidePage1(){
+ let hideP = document.querySelector(".page1");
+ if (hideP.style.display != "none"){
+    hideP.style.display = "none";
+ }else{
+    hideP.style.display = "block";
+ }
+}
+
+
+function showP2(){
+    let proceedB = document.getElementsByTagName("template")[0];
+    let a = proceedB.content.cloneNode(true);
+    document.body.appendChild(a);
 
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,48 +15,86 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Pagina1 -->
-<div id="background">
-<div class="container">
+    <div id="background">
+        <div class="container">
 
-    <img class="logo" src="assets/epicode_logo.png" alt="Logo-epicode">
+            <img class="logo" src="assets/epicode_logo.png" alt="Logo-epicode">
+            <div class="page1">
+                <div class="div-title">
+                    <h2 class="title">Welcome to <span class="span">your exam</span></h2>
+                </div>
 
-<div class="div-title">
-    <h2 class="title">Welcome to <span class="span">your exam</span></h2>
-</div>
+                <div>
+                    <h3 class="title-3">Instructions</h3>
+                </div>
 
-<div>
-    <h3 class="title-3">Instructions</h3>
-</div>
+                <div class="par1">
+                    <p class="para">We don't expect most engineers to know the answers to all of these<br> questions, so
+                        don't worry if you're unsure of a few of them</p>
+                </div>
 
-<div class="par1">
-    <p class="para">We don't expect most engineers to know the answers to all of these<br> questions, so don't worry if you're unsure of a few of them</p>
-</div>
+                <div>
+                    <ul class="ul">
+                        <li class="list">Each question is <span class="span">timed</span> and can only be <span
+                                class="span">answered once.</span></li>
+                        <li class="list">Changing browser tab pr opening other windows will <span
+                                class="span">invalidate
+                                the question.</span></li>
+                        <li class="list">this exam will take approx. <span class="span">0-5 minutes.</span></li>
+                    </ul>
+                </div>
 
-<div>
-    <ul class="ul">
-        <li class="list">Each question is <span class="span">timed</span> and can only be <span class="span">answered once.</span></li>
-        <li class="list">Changing browser tab pr opening other windows will <span class="span">invalidate the question.</span></li>
-        <li class="list">this exam will take approx. <span class="span">0-5 minutes.</span></li>
-    </ul>
-</div>
+                <div class="bottom1">
+                    <div class="bottom">
+                        <input class="check" type="checkbox">
+                    </div>
+                    <div class="bottom">
+                        <p class="para">I promise to answer myfels without help from anyone</p>
+                    </div>
+                    <div class="bottom">
+                        <button class="button_p">Proceed</button>
+                    </div>
 
-<div class="bottom1">
-<div class="bottom">
-    <input class="check" type="checkbox">
-</div>
-<div class="bottom">
-    <p class="para">I promise to answer myfels without help from anyone</p>
-</div>
-<div class="bottom">
-    <button class="button-p">Proceed</button>
-</div>
+                </div>
+            </div>
+            <!-- Pagina2 -->
+            <template>
+                <div class="cerchio">
+                    <div id="timer"></div>
+                </div>
 
-</div>
+                <div class="multipleChoise">
+                    <div class="question">
+                        <p>Domanda?</p>
+                    </div>
+                    <div>
+                        <button>Primo bottone</button>
+                        <button>Secondo bottone</button>
+                        <button>Terzo bottone</button>
+                        <button>Quarto bottone</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="question"></div>
+                    <div class="trueFalse">
+                        <button>vero</button>
+                        <button>falso</button>
+                    </div>
+                </div>
+            </template>
 
-</div>
-</div> 
+
+
+
+
+
+
+        </div>
+    </div>
     <script src="JS/script.js"></script>
 </body>
+
 </html>
