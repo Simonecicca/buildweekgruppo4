@@ -1,8 +1,9 @@
-#background {
+.background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
     max-width: 1000px;
     margin: 50px 100px;
+    padding: 100px;
 }
 
 .logo {
@@ -111,9 +112,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
+    flex-direction: column;
 }
+
 
 #timer {
     display: inline-block;
@@ -124,8 +125,8 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
-
 }
+
 
 .cerchio {
     display: flex;
@@ -135,13 +136,26 @@
     right: 550px;
 }
 
+
 .question {
     color: white;
     font-size: 4rem;
     font-family: 'Outfit', sans-serif;
-    word-wrap: break-word;
-    line-height: 100px;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+
+    
+    /* word-wrap: break-word; */
+    /* line-height: 100px;
     text-align: center;
     padding-top: 200px;
-    padding-left: 130px;
+    padding-left: 130px; */
+}
+
+#buttons{
+
+    margin: 25px;
 }
