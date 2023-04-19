@@ -31,9 +31,18 @@
 .stella {
     text-align: center;
     background-repeat: repeat 10;
-    width: calc(100% / 10);
+    display: inlineblock;
     height: 100%;
     float:left;
+}
+
+.dati {
+    margin-top: 30px;
+    width: 100%;
+    padding-bottom: 3px;
+    background: transparent;
+    border: none;
+    border-bottom: rgb(185, 32, 185) 1px solid;
 }
 
 
