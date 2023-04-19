@@ -1,9 +1,12 @@
 #background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
-    height: 1087px;
+    max-width: 1000px;
+    margin: 50px 100px;
+    padding: 100px;
 
 }
+
 
 .logo {
     max-width: 160px;
