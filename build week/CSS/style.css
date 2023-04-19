@@ -3,14 +3,14 @@
     background-size: cover;
     max-width: 1000px;
     margin: 50px 100px;
-    padding: 100px;
+    padding: 50px 100px;
 }
 
 .logo {
     /* max-width: 160px;*/
     width: 20%;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 
 }
 
@@ -149,14 +149,23 @@
 
 
     
-    /* word-wrap: break-word; */
-    /* line-height: 100px;
+   
+     line-height: 100px;
     text-align: center;
-    padding-top: 200px;
-    padding-left: 130px; */
-}
+    padding: 10px 50px;
+} 
 
 #buttons{
-
+    padding: 10px 50px;
     margin: 25px;
+}
+
+.answersbuttons{
+    color: white;
+    background-color: #9687AB;
+    border-radius: 50%;
+    border: 1px solid white;
+    text-align: center;
+    padding: 40px 70px;
+    margin: 10px;
 }

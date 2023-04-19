@@ -7,7 +7,8 @@ async function takeQuestion() {
         let visitedIndex = [];
 
         bottone.addEventListener('click', function(){
-            loadQuestions(requests, visitedIndex);
+            let indiceVisitato = loadQuestions(requests, visitedIndex);
+            load4Answers(requests, 0);
         });
 
 
@@ -76,6 +77,15 @@ function load4Answers(domandeObj, indice){
 
     console.log(answers);
 
+    let bottone1 = document.querySelector('#button1');
+    let bottone2 = document.querySelector('#button2');
+    let bottone3 = document.querySelector('#button3');
+    let bottone4 = document.querySelector('#button4');
+
+    bottone1.textContent = answers[0];
+    bottone2.textContent = answers[1];
+    bottone3.textContent = answers[2];
+    bottone4.textContent = answers[3];
     
 }
 
