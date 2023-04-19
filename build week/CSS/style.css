@@ -100,10 +100,9 @@
 
 .check {
     background-color: transparent;
-    border: 2px solid white;
-    padding: 10px 20px;
-    width: 25px;
-    height: 25px;
+    padding: 5px 10px;
+    width: 10px;
+    height: 10px;
 }
 
 /* pagina2 */
