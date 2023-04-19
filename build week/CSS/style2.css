@@ -1,4 +1,4 @@
-#background {
+/*#background {
   background-image: url(../assets/bg.jpg);
   background-size: cover;
   height: 1087px;
@@ -36,9 +36,11 @@
 
 .question{
     color: white;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-family: 'Outfit', sans-serif;
     word-wrap: break-word;
     line-height: 100px;
     text-align: center;
-}
+    padding-top:200px;
+   
+}*/
