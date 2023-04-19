@@ -1,7 +1,8 @@
 #background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
-    height: 1087px;
+    max-width: 1000px;
+    margin: 50px 100px;
 
 }
 
@@ -9,9 +10,47 @@
     max-width: 160px;
     margin-top: 30px;
     margin-bottom: 100px;
+    margin-left: 50px;
     
 }
 
 .Guido {
    text-align: center;
+}
+
+.risultato {
+    text-align: center;
+    color: white;
+}
+
+.titolo {
+    font-size: 3rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+}
+
+.testo {
+    font-size: 1.5rem;
+    font-family:'Inter', sans-serif;
+    margin-top: 10px;
+}
+
+.central {
+    display: flex;
+    justify-content: center;
+   margin-top: 30px;
+   color: white;
+   align-self: center;
+}
+
+.esamepassato {
+    text-align: center;
+}
+
+.certificate {
+    
+}
+
+.passed {
+    margin-bottom: 20px;
 }
