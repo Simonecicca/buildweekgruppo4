@@ -17,40 +17,30 @@ async function takeQuestion() {
 
     bottoneProceed.addEventListener('click', function () {
         let indiceVisitato = loadQuestions(requests, visitedIndex);
-        load4Answers(requests, indiceVisitato);
+        let answers = load4Answers(requests, indiceVisitato);
+        createButtons(answers, requests, visitedIndex);
+
+
     });
 
-    let button1 = document.querySelector('#button1');
-    console.log(button1);
-    let button2 = document.querySelector('#button2');
-    let button3 = document.querySelector('#button3');
-    let button4 = document.querySelector('#button4');
 
 
-    button1.addEventListener('click', function () {
-        let indiceVisitato = loadQuestions(requests, visitedIndex);
-        load4Answers(requests, indiceVisitato);
-    });
-
-    button2.addEventListener('click', function () {
-        let indiceVisitato = loadQuestions(requests, visitedIndex);
-        load4Answers(requests, indiceVisitato);
-    });
-
-    button3.addEventListener('click', function () {
-        let indiceVisitato = loadQuestions(requests, visitedIndex);
-        load4Answers(requests, indiceVisitato);
-    });
-
-    button4.addEventListener('click', function () {
-        let indiceVisitato = loadQuestions(requests, visitedIndex);
-        load4Answers(requests, indiceVisitato);
-    });
 
 }
 
+
 document.onload = takeQuestion();
 
+//caricare pagina 3
+
+let rateUs = document.querySelector('.bottonepagina3')
+
+rateUs.addEventListener('click', function () {
+    let page3 = document.querySelector('#page3');
+    page3.classList = 'disappear';
+    let page4 = document.querySelector('#page4')
+    page4.classList.remove('disappear');
+});
 
 //funzione per caricare le domande
 function loadQuestions(domandeObj, visitedIndex) {
@@ -72,6 +62,10 @@ function loadQuestions(domandeObj, visitedIndex) {
 
     if (visitedIndex.length == domandeObj.results.length) {
         questionsPlaceHolder.textContent = 'domande finite'
+        let page2 = document.querySelector("#page2");
+        page2.classList = 'disappear';
+        let page3 = document.querySelector('#page3');
+        page3.classList.remove('disappear');
     } else {
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
     }
@@ -104,16 +98,29 @@ function load4Answers(domandeObj, indice) {
 
     console.log(answers);
 
-    let bottone1 = document.querySelector('#button1');
-    let bottone2 = document.querySelector('#button2');
-    let bottone3 = document.querySelector('#button3');
-    let bottone4 = document.querySelector('#button4');
+    return answers;
 
-    bottone1.textContent = answers[0];
-    bottone2.textContent = answers[1];
-    bottone3.textContent = answers[2];
-    bottone4.textContent = answers[3];
+}
 
+//creazione dei bottoni risposta
+
+function createButtons(answers, requests, visitedIndex) {
+
+    let divBottoni = document.querySelector('#buttons');
+    for (let answer of answers) {
+        let button = document.createElement('button');
+        button.textContent = answer;
+        button.classList = 'answersbuttons';
+        button.addEventListener('click', function () {
+            let indiceVisitato = loadQuestions(requests, visitedIndex);
+            let answersArr = load4Answers(requests, indiceVisitato);
+            removeButtons()
+            createButtons(answersArr, requests, visitedIndex);
+
+        })
+        divBottoni.append(button);
+    }
+    // removeButtons();
 }
 
 
@@ -126,27 +133,41 @@ function load4Answers(domandeObj, indice) {
 let proceedButton = document.querySelector(".button_p");
 proceedButton.addEventListener('click', function () {
     document.querySelector("div.button_p");
-    showP2();
     hidePage1();
+    showP2();
 })
 
 function hidePage1() {
     let hideP = document.querySelector(".page1");
-    if (hideP.style.display != "none") {
-        hideP.style.display = "none";
-    } else {
-        hideP.style.display = "block";
-    }
+    // if (hideP.style.display != "none") {
+    //     hideP.style.display = "none";
+    // } else {
+    //     hideP.style.display = "block";
+    // }
+    hideP.classList = 'disappear';
 }
 
 
 function showP2() {
-    let proceedB = document.getElementsByTagName("template")[0];
-    let a = proceedB.content.cloneNode(true);
-    document.body.appendChild(a);
+    // let proceedB = document.getElementsByTagName("template")[0];
+    // let clone = proceedB.content.cloneNode(true);
+    // document.body.appendChild(clone);
+    // return clone;
+    let page2 = document.querySelector("#page2");
+    page2.classList.remove('disappear');
 
 }
 
+function removeButtons() {
+
+    let bottoni = document.querySelectorAll('.answersbuttons')
+    console.log(bottoni);
+
+    for (let bottone of bottoni) {
+
+        bottone.classList = 'disappear';
+    }
+}
 
 
 

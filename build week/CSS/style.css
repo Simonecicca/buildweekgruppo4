@@ -1,3 +1,9 @@
+.disappear{
+    display: none;
+}
+
+
+
 .background {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
