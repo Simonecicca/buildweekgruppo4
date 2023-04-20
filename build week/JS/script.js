@@ -4,6 +4,10 @@
 // let bottone3 = document.querySelector('#button3');
 // let bottone4 = document.querySelector('#button4');
 
+let count = 1;
+let countRight = 0;
+let countWrong = 0;
+let correctAnswer;
 
 async function takeQuestion() {
 
@@ -19,13 +23,7 @@ async function takeQuestion() {
         let indiceVisitato = loadQuestions(requests, visitedIndex);
         let answers = load4Answers(requests, indiceVisitato);
         createButtons(answers, requests, visitedIndex);
-
-
     });
-
-
-
-
 }
 
 
@@ -40,6 +38,7 @@ rateUs.addEventListener('click', function () {
     page3.classList = 'disappear';
     let page4 = document.querySelector('#page4')
     page4.classList.remove('disappear');
+    
 });
 
 //funzione per caricare le domande
@@ -47,18 +46,18 @@ function loadQuestions(domandeObj, visitedIndex) {
 
     let randomNumber = Math.floor(Math.random() * 10);
     let questionsPlaceHolder = document.querySelector('.question')
-    console.log(randomNumber);
+    // console.log(randomNumber);
 
     while (visitedIndex.indexOf(randomNumber) != -1) {
         randomNumber = Math.floor(Math.random() * 10);
-        console.log(randomNumber);
-        console.log(domandeObj.results.length);
+        // console.log(randomNumber);
+        // console.log(domandeObj.results.length);
 
     }
     visitedIndex.push(randomNumber);
-    console.log(visitedIndex);
+    // console.log(visitedIndex);
 
-    console.log(visitedIndex.length);
+    // console.log(visitedIndex.length);
 
     if (visitedIndex.length == domandeObj.results.length) {
         questionsPlaceHolder.textContent = 'domande finite'
@@ -70,9 +69,12 @@ function loadQuestions(domandeObj, visitedIndex) {
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
     }
 
+    // for (let i = 1; i < domandeObj.results[randomNumber]; i++) {
+
+
+    // }
+
     return randomNumber;
-
-
 }
 
 
@@ -84,11 +86,11 @@ function load4Answers(domandeObj, indice) {
     let answers = [];
     let indiceRandom = Math.floor(Math.random() * 4);
     let incorrectAnswer = domandeObj.results[indice].incorrect_answers;
-    let correctAnswer = domandeObj.results[indice].correct_answer;
+    correctAnswer = domandeObj.results[indice].correct_answer;
 
 
-    console.log(incorrectAnswer);
-    console.log(correctAnswer);
+    console.log('sbagliate:' + incorrectAnswer);
+    console.log('giusta:' + correctAnswer);
 
     for (let answer of incorrectAnswer) {
         answers.push(answer)
@@ -96,7 +98,7 @@ function load4Answers(domandeObj, indice) {
 
     answers.splice(indiceRandom, 0, correctAnswer)
 
-    console.log(answers);
+    // console.log(answers);
 
     return answers;
 
@@ -107,28 +109,67 @@ function load4Answers(domandeObj, indice) {
 function createButtons(answers, requests, visitedIndex) {
 
     let divBottoni = document.querySelector('#buttons');
+    let risposta;
+
     for (let answer of answers) {
         let button = document.createElement('button');
         button.textContent = answer;
         button.classList = 'answersbuttons';
         button.addEventListener('click', function () {
+            risposta = answer;
             let indiceVisitato = loadQuestions(requests, visitedIndex);
+            checkAnswer(correctAnswer, risposta);
             let answersArr = load4Answers(requests, indiceVisitato);
             removeButtons()
             createButtons(answersArr, requests, visitedIndex);
+            questionsCounters(requests.results.length);
+            riempiPercentuali();
+            console.log('risposta data' + risposta);
 
         })
         divBottoni.append(button);
     }
-    // removeButtons();
+
+}
+
+//funzione per controllare se la risposta è giusta 
+
+function checkAnswer(correctAnswerF, risposta) {
+
+
+
+    if (risposta == correctAnswerF) {
+        countRight++;
+    } else {
+        countWrong++;
+    }
+
+    console.log('giusta count ' + countRight);
+    console.log('sbagliata count ' + countWrong);
+    // console.log('risposta per verificare' + correctAnswerF);
+    // console.log('-------------------------ciclo dopo---------------------------');
+}
+
+//riempi percentuali
+
+function riempiPercentuali() {
+    let percentualeGiuste = (countRight * 10)
+    console.log(percentualeGiuste);
+    let c = document.querySelector('.percentualenumerocorrette')
+    c.textContent = percentualeGiuste;
+
+    let percentualeSbagliate = (countWrong * 10);
+    console.log(percentualeSbagliate);
+    let s = document.querySelector('.percentualenumerosbagliate')
+    s.textContent = percentualeSbagliate;
 }
 
 
 
-//template per pagina 2
 
 
 
+//bottone per far apparire pagina 2
 
 let proceedButton = document.querySelector(".button_p");
 proceedButton.addEventListener('click', function () {
@@ -161,13 +202,24 @@ function showP2() {
 function removeButtons() {
 
     let bottoni = document.querySelectorAll('.answersbuttons')
-    console.log(bottoni);
+    // console.log(bottoni);
 
     for (let bottone of bottoni) {
 
         bottone.classList = 'disappear';
     }
 }
+
+//funzione per contare le domande e giusto sbagliato
+
+function questionsCounters(lunghezzaArrDomande) {
+
+    count++;
+
+    let contatore = document.querySelector('#counter');
+    contatore.textContent = `QUESTION ` + count + '/' + lunghezzaArrDomande
+}
+
 
 
 
