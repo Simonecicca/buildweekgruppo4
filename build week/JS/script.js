@@ -1,8 +1,5 @@
 
-// let bottone1 = document.querySelector('#button1');
-// let bottone2 = document.querySelector('#button2');
-// let bottone3 = document.querySelector('#button3');
-// let bottone4 = document.querySelector('#button4');
+
 
 let count = 1;
 let countRight = 0;
@@ -29,17 +26,7 @@ async function takeQuestion() {
 
 document.onload = takeQuestion();
 
-//caricare pagina 3
 
-let rateUs = document.querySelector('.bottonepagina3')
-
-rateUs.addEventListener('click', function () {
-    let page3 = document.querySelector('#page3');
-    page3.classList = 'disappear';
-    let page4 = document.querySelector('#page4')
-    page4.classList.remove('disappear');
-    
-});
 
 //funzione per caricare le domande
 function loadQuestions(domandeObj, visitedIndex) {
@@ -143,7 +130,6 @@ function checkAnswer(correctAnswerF, risposta) {
     } else {
         countWrong++;
     }
-
     console.log('giusta count ' + countRight);
     console.log('sbagliata count ' + countWrong);
     // console.log('risposta per verificare' + correctAnswerF);
@@ -156,12 +142,12 @@ function riempiPercentuali() {
     let percentualeGiuste = (countRight * 10)
     console.log(percentualeGiuste);
     let c = document.querySelector('.percentualenumerocorrette')
-    c.textContent = percentualeGiuste;
+    c.textContent = percentualeGiuste + "%";
 
     let percentualeSbagliate = (countWrong * 10);
     console.log(percentualeSbagliate);
     let s = document.querySelector('.percentualenumerosbagliate')
-    s.textContent = percentualeSbagliate;
+    s.textContent = percentualeSbagliate + "%";
 }
 
 
@@ -222,7 +208,17 @@ function questionsCounters(lunghezzaArrDomande) {
 
 
 
+//caricare pagina 4
 
+let rateUs = document.querySelector('.bottonepagina3')
+
+rateUs.addEventListener('click', function () {
+    let page3 = document.querySelector('#page3');
+    page3.classList = 'disappear';
+    let page4 = document.querySelector('#page4')
+    page4.classList.remove('disappear');
+
+});
 
 
 
@@ -256,3 +252,23 @@ let x = setInterval(function () {
         document.querySelector("#timer").innerHTML = "finish";
     }
 }, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// count finale risposte date
+// let finalCountC = document.querySelector(".questionsC");
+// finalCountC.textContent = countRight + "questions";
+
+// let finalCountW = document.querySelector(".questionsW");
+// finalCountC.textContent = ccountWrong + "questions";

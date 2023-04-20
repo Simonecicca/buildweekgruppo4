@@ -216,7 +216,7 @@
 }
 
 .titolo {
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Outfit', sans-serif;
     font-weight: bold;
 }
@@ -238,25 +238,32 @@
 
 .esamepassato {
     text-align: center;
-    margin-left: 80px;
-    margin-right: 80px;
+  
+    
+    color: white;
+    border: 35px solid #00FFFF;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
     
 }
 
-.certificate {
-    
-}
 
+.gratz{
+    margin-top: 60px;
+}
 .passed {
+    margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
     color: #00FFFF;
 
 }
 
-.rispostecorrette {
-    
-}
+
 
 .divbottone {
     display: flex;
@@ -277,6 +284,28 @@
 
 .percentuale {
     font-size: 2rem;
+}
+
+.rispostecorrette{
+    padding-top: 120px;
+    margin-right: 50px;
+    font-family:'Inter', sans-serif;
+    font-size: 3rem;
+}
+
+.rispostesbagliate{
+    padding-top: 120px;
+    margin-left: 50px;
+    font-family:'Inter', sans-serif;
+    font-size: 3rem;
+}
+
+.percentualenumerocorrette{
+    font-weight: 700;
+}
+
+.percentualenumerosbagliate{
+    font-weight: 700;
 }
 
 /* Pagina4 */
@@ -359,7 +388,6 @@
     height: 55px;
     font-size: 1rem;
     font-weight: 800;
-   
-
-
 }
+
+
