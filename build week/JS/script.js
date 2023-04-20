@@ -22,32 +22,42 @@ async function takeQuestion() {
         createButtons(answers, requests, visitedIndex);
     });
 }
-
-
 document.onload = takeQuestion();
 
 
+//bottone per far apparire pagina 2
+
+let proceedButton = document.querySelector(".button_p");
+proceedButton.addEventListener('click', function () {
+    document.querySelector("div.button_p");
+    hidePage1();
+    showP2();
+})
+
+function hidePage1() {
+    let hideP = document.querySelector(".page1");
+    hideP.classList = 'disappear';
+}
+
+function showP2() {
+    let page2 = document.querySelector("#page2");
+    page2.classList.remove('disappear');
+}
 
 //funzione per caricare le domande
 function loadQuestions(domandeObj, visitedIndex) {
 
     let randomNumber = Math.floor(Math.random() * 10);
     let questionsPlaceHolder = document.querySelector('.question')
-    // console.log(randomNumber);
+
 
     while (visitedIndex.indexOf(randomNumber) != -1) {
         randomNumber = Math.floor(Math.random() * 10);
-        // console.log(randomNumber);
-        // console.log(domandeObj.results.length);
-
     }
     visitedIndex.push(randomNumber);
-    // console.log(visitedIndex);
-
-    // console.log(visitedIndex.length);
 
     if (visitedIndex.length == domandeObj.results.length) {
-        questionsPlaceHolder.textContent = 'domande finite'
+        questionsPlaceHolder.textContent = 'domande finite';
         let page2 = document.querySelector("#page2");
         page2.classList = 'disappear';
         let page3 = document.querySelector('#page3');
@@ -55,12 +65,6 @@ function loadQuestions(domandeObj, visitedIndex) {
     } else {
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
     }
-
-    // for (let i = 1; i < domandeObj.results[randomNumber]; i++) {
-
-
-    // }
-
     return randomNumber;
 }
 
@@ -84,11 +88,7 @@ function load4Answers(domandeObj, indice) {
     }
 
     answers.splice(indiceRandom, 0, correctAnswer)
-
-    // console.log(answers);
-
     return answers;
-
 }
 
 //creazione dei bottoni risposta
@@ -107,7 +107,7 @@ function createButtons(answers, requests, visitedIndex) {
             let indiceVisitato = loadQuestions(requests, visitedIndex);
             checkAnswer(correctAnswer, risposta);
             let answersArr = load4Answers(requests, indiceVisitato);
-            removeButtons()
+            removeButtons();
             createButtons(answersArr, requests, visitedIndex);
             questionsCounters(requests.results.length);
             riempiPercentuali();
@@ -119,11 +119,22 @@ function createButtons(answers, requests, visitedIndex) {
 
 }
 
+// funzione per rimuovere i bottoni 
+
+function removeButtons() {
+
+    let bottoni = document.querySelectorAll('.answersbuttons')
+    // console.log(bottoni);
+
+    for (let bottone of bottoni) {
+
+        bottone.classList = 'disappear';
+    }
+}
+
 //funzione per controllare se la risposta è giusta 
 
 function checkAnswer(correctAnswerF, risposta) {
-
-
 
     if (risposta == correctAnswerF) {
         countRight++;
@@ -132,8 +143,6 @@ function checkAnswer(correctAnswerF, risposta) {
     }
     console.log('giusta count ' + countRight);
     console.log('sbagliata count ' + countWrong);
-    // console.log('risposta per verificare' + correctAnswerF);
-    // console.log('-------------------------ciclo dopo---------------------------');
 }
 
 //riempi percentuali
@@ -155,46 +164,9 @@ function riempiPercentuali() {
 
 
 
-//bottone per far apparire pagina 2
-
-let proceedButton = document.querySelector(".button_p");
-proceedButton.addEventListener('click', function () {
-    document.querySelector("div.button_p");
-    hidePage1();
-    showP2();
-})
-
-function hidePage1() {
-    let hideP = document.querySelector(".page1");
-    // if (hideP.style.display != "none") {
-    //     hideP.style.display = "none";
-    // } else {
-    //     hideP.style.display = "block";
-    // }
-    hideP.classList = 'disappear';
-}
 
 
-function showP2() {
-    // let proceedB = document.getElementsByTagName("template")[0];
-    // let clone = proceedB.content.cloneNode(true);
-    // document.body.appendChild(clone);
-    // return clone;
-    let page2 = document.querySelector("#page2");
-    page2.classList.remove('disappear');
 
-}
-
-function removeButtons() {
-
-    let bottoni = document.querySelectorAll('.answersbuttons')
-    // console.log(bottoni);
-
-    for (let bottone of bottoni) {
-
-        bottone.classList = 'disappear';
-    }
-}
 
 //funzione per contare le domande e giusto sbagliato
 
