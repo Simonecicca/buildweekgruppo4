@@ -233,7 +233,7 @@
     text-align: center;
     padding: 5px;
     margin: 10px;
-    width: 400px;
+    width: 360px;
     height: 80px;
 
 }
@@ -442,6 +442,7 @@
     font-weight: 800;
 }
 
-.stelline:hover{
-    fill: #BF008D;
+.stelline {
+   background-repeat: repeat-x;
+   background-size: contain;
 }

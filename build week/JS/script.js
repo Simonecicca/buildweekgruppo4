@@ -33,11 +33,13 @@ let x = setInterval(function () {
     let seconds = Math.floor((interval % (1000 * 61)) / 1000);
     document.querySelector("#timer").innerHTML = "seconds <br>" + seconds + "<br>remaning";
 
-    if (interval == 0) {
+    if (seconds == 0) {
         clearInterval(x);
         document.querySelector("#timer").innerHTML = "finish";
         
-    }else if(seconds == 0){
+        
+        
+    }else if(interval == 0){
         createButtons(answers, requests, visitedIndex);
     }
 }, 1000);
@@ -53,6 +55,7 @@ proceedButton.addEventListener('click', function () {
     document.querySelector("div.button_p");
     hidePage1();
     showP2();
+    
 })
 
 function hidePage1() {
@@ -198,7 +201,7 @@ function questionsCounters(lunghezzaArrDomande) {
 function passedNotPassed(countRightF){
     if(countRightF < 6){
         let a = document.querySelector(".gratz");
-        a.textContent = "Ripassa dal via!"
+        a.textContent = "Oh no! Restart!"
         
         let b = document.querySelector(".passed");
         b.textContent = "You didn't pass the exam! :( ";
