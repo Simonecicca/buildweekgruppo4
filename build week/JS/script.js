@@ -76,13 +76,8 @@ function loadQuestions(domandeObj, visitedIndex) {
     }
     visitedIndex.push(randomNumber);
 
-    if (visitedIndex.length == domandeObj.results.length) {
-        questionsPlaceHolder.textContent = 'domande finite';
-        
-        
-    } else {
-        questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
-    }
+    questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
+    
     return randomNumber;
 }
 
@@ -131,8 +126,8 @@ function createButtons(answers, requests, visitedIndex) {
             questionsCounters(requests.results.length);
             riempiPercentuali();
             console.log('risposta data' + risposta);
-        }else if (count == 10){
-            button.addEventListener('click', function(){
+            }else if (count == 10){
+            
                 checkAnswer(correctAnswer, risposta);
                 riempiPercentuali();
                 removeButtons();
@@ -140,8 +135,6 @@ function createButtons(answers, requests, visitedIndex) {
                 page2.classList = 'disappear';
                 let page3 = document.querySelector('#page3');
                 page3.classList.remove('disappear');
-            })
-            
         }
 
         })
