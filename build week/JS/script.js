@@ -20,7 +20,27 @@ async function takeQuestion() {
         let indiceVisitato = loadQuestions(requests, visitedIndex);
         let answers = load4Answers(requests, indiceVisitato);
         createButtons(answers, requests, visitedIndex);
+        
     });
+
+    // TIMER
+
+let timer = new Date("Jan 5, 2024 15:37:25").getTime();
+let x = setInterval(function () {
+    let now = new Date().getTime()
+    let interval = timer - now;
+    let seconds = Math.floor((interval % (1000 * 61)) / 1000);
+    document.querySelector("#timer").innerHTML = "seconds <br>" + seconds + "<br>remaning";
+
+    if (interval == 0) {
+        clearInterval(x);
+        document.querySelector("#timer").innerHTML = "finish";
+        
+    }else if(seconds == 0){
+        createButtons(answers, requests, visitedIndex);
+    }
+}, 1000);
+
 }
 document.onload = takeQuestion();
 
@@ -58,10 +78,8 @@ function loadQuestions(domandeObj, visitedIndex) {
 
     if (visitedIndex.length == domandeObj.results.length) {
         questionsPlaceHolder.textContent = 'domande finite';
-        let page2 = document.querySelector("#page2");
-        page2.classList = 'disappear';
-        let page3 = document.querySelector('#page3');
-        page3.classList.remove('disappear');
+        
+        
     } else {
         questionsPlaceHolder.textContent = domandeObj.results[randomNumber].question
     }
@@ -103,6 +121,7 @@ function createButtons(answers, requests, visitedIndex) {
         button.textContent = answer;
         button.classList = 'answersbuttons';
         button.addEventListener('click', function () {
+            if (count < 10){
             risposta = answer;
             let indiceVisitato = loadQuestions(requests, visitedIndex);
             checkAnswer(correctAnswer, risposta);
@@ -112,6 +131,18 @@ function createButtons(answers, requests, visitedIndex) {
             questionsCounters(requests.results.length);
             riempiPercentuali();
             console.log('risposta data' + risposta);
+        }else if (count == 10){
+            button.addEventListener('click', function(){
+                checkAnswer(correctAnswer, risposta);
+                riempiPercentuali();
+                removeButtons();
+                let page2 = document.querySelector("#page2");
+                page2.classList = 'disappear';
+                let page3 = document.querySelector('#page3');
+                page3.classList.remove('disappear');
+            })
+            
+        }
 
         })
         divBottoni.append(button);
@@ -210,21 +241,34 @@ rateUs.addEventListener('click', function () {
 
 
 
-// TIMER
 
-let timer = new Date("Jan 5, 2024 15:37:25").getTime();
-let x = setInterval(function () {
-    let now = new Date().getTime()
-    let interval = timer - now;
-    let seconds = Math.floor((interval % (1000 * 61)) / 1000);
-    document.querySelector("#timer").innerHTML = "seconds <br>" + seconds + "<br>remaning";
 
-    if (interval < 0) {
-        clearInterval(x);
-        document.querySelector("#timer").innerHTML = "finish";
-    }
-}, 1000);
 
+// const cerchietto = document.getElementById("#cerchio");
+
+// let lable = [];
+// let chart = new Chart(cerchietto, {
+//     type: 'doughnut',
+//     data: {
+//         labels: label,
+//         datasets: [{
+//             backgroundColor: [
+//                 '00ffff',
+//                 'bf008d'
+//             ],
+//             borderWidth: 0,
+
+//         }]
+//     }
+// });
+//     [
+//             label: 'timer',
+//             data: [300, 50, 100],
+
+            
+//     ],
+//     hoverOffset: 2
+// }];
 
 
 

@@ -1,4 +1,4 @@
-.disappear{
+.disappear {
     display: none;
 }
 
@@ -30,9 +30,7 @@
     line-height: 60px;
 }
 
-/* .container {
-    margin-left: 100px;
-} */
+
 
 .div_title {
     margin-bottom: 10px;
@@ -121,10 +119,15 @@
     flex-direction: column;
 }
 
-#cerchio{
+#cerchio {
     padding-left: 650px;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #timer {
     display: flex;
@@ -137,11 +140,59 @@
     width: 100px;
     height: 100px;
     text-align: center;
+    position:absolute;
+    margin-bottom: 100px;
 }
+.semicerchio:nth-child(1){
+    border-radius: 50%;
+    width: 100px;
+    height: 100px; 
+    position: absolute;
+    z-index: 1;
+    border: 15px solid #00FFFF;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
 
-.logoEtimer{
-    display: inline-block;
 }
+.internocerchio {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    position: absolute;
+    /* background-color: transparent; */
+    
+    border: 5px solid #d20094;
+    z-index: 2;
+    transition: rotate(360);
+    transform-origin: right center;
+    margin-bottom: 100px;
+}
+/* .logoEtimer1 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #00FFFF;
+    position: absolute;
+    z-index: 1;
+} */
+
+/* .semicerchio:nth-child(1) {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #d20094;
+    border-radius: 50%;
+} */
+
+
+
+
+
 
 
 /* .cerchio {
@@ -166,15 +217,15 @@
     text-align: center;
     padding: 10px 50px;
     /* height: 250px; */
-} 
+}
 
-#buttons{
+#buttons {
     box-sizing: content-box;
     padding: 10px 50px;
     margin: 25px;
 }
 
-.answersbuttons{
+.answersbuttons {
     color: white;
     background-color: #9687ab5c;
     border-radius: 50px 50px 50px 50px;
@@ -187,11 +238,11 @@
 
 }
 
-.answersbuttons:hover{
+.answersbuttons:hover {
     background-color: #BF008D;
 }
 
-#questionCounter{
+#questionCounter {
     color: white;
     display: flex;
     justify-content: center;
@@ -203,11 +254,11 @@
     max-width: 160px;
     margin-top: 30px;
     margin-left: 50px;
-    
+
 }
 
 .Guido {
-   text-align: center;
+    text-align: center;
 }
 
 .risultato {
@@ -223,23 +274,23 @@
 
 .testo {
     font-size: 1.5rem;
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin-top: 10px;
 }
 
 .central {
     display: flex;
     justify-content: center;
-   margin-top: 30px;
-   color: white;
-   align-self: center;
-   font-family:'Inter', sans-serif;
+    margin-top: 30px;
+    color: white;
+    align-self: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .esamepassato {
     text-align: center;
-  
-    
+
+
     color: white;
     border: 35px solid #00FFFF;
     justify-content: center;
@@ -248,13 +299,14 @@
     border-radius: 50%;
     width: 300px;
     height: 300px;
-    
+
 }
 
 
-.gratz{
+.gratz {
     margin-top: 60px;
 }
+
 .passed {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -276,7 +328,7 @@
     color: white;
     background-color: transparent;
     border: 2px white solid;
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     width: 140px;
     height: 50px;
@@ -286,25 +338,25 @@
     font-size: 2rem;
 }
 
-.rispostecorrette{
+.rispostecorrette {
     padding-top: 120px;
     margin-right: 50px;
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 3rem;
 }
 
-.rispostesbagliate{
+.rispostesbagliate {
     padding-top: 120px;
     margin-left: 50px;
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 3rem;
 }
 
-.percentualenumerocorrette{
+.percentualenumerocorrette {
     font-weight: 700;
 }
 
-.percentualenumerosbagliate{
+.percentualenumerosbagliate {
     font-weight: 700;
 }
 
@@ -314,7 +366,7 @@
     max-width: 160px;
     margin-top: 30px;
     margin-bottom: 80px;
-    
+
 }
 
 .titolop4 {
@@ -340,7 +392,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 80px;
-      
+
 }
 
 .stella img {
@@ -390,4 +442,6 @@
     font-weight: 800;
 }
 
-
+.stelline:hover{
+    fill: #BF008D;
+}
