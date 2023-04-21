@@ -33,7 +33,7 @@ let x = setInterval(function () {
     let seconds = Math.floor((interval % (1000 * 61)) / 1000);
     document.querySelector("#timer").innerHTML = "seconds <br>" + seconds + "<br>remaning";
 
-    if (seconds == 0) {
+    if (interval == 0) {
         clearInterval(x);
         document.querySelector("#timer").innerHTML = "finish";
         
