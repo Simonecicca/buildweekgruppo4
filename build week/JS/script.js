@@ -92,9 +92,9 @@ function load4Answers(domandeObj, indice) {
     let incorrectAnswer = domandeObj.results[indice].incorrect_answers;
     correctAnswer = domandeObj.results[indice].correct_answer;
 
-
-    console.log('sbagliate:' + incorrectAnswer);
     console.log('giusta:' + correctAnswer);
+    console.log('sbagliate:' + incorrectAnswer);
+    
 
     for (let answer of incorrectAnswer) {
         answers.push(answer)
@@ -118,6 +118,7 @@ function createButtons(answers, requests, visitedIndex) {
         button.addEventListener('click', function () {
             if (count < 10){
             risposta = answer;
+            console.log('risposta data ' + risposta);
             let indiceVisitato = loadQuestions(requests, visitedIndex);
             checkAnswer(correctAnswer, risposta);
             let answersArr = load4Answers(requests, indiceVisitato);
@@ -125,7 +126,7 @@ function createButtons(answers, requests, visitedIndex) {
             createButtons(answersArr, requests, visitedIndex);
             questionsCounters(requests.results.length);
             riempiPercentuali();
-            console.log('risposta data' + risposta);
+            
             }else if (count == 10){
             
                 checkAnswer(correctAnswer, risposta);
@@ -135,27 +136,14 @@ function createButtons(answers, requests, visitedIndex) {
                 page2.classList = 'disappear';
                 let page3 = document.querySelector('#page3');
                 page3.classList.remove('disappear');
-        }passedNotPassed(countRight);
+                passedNotPassed(countRight);
+        }
 
         })
         divBottoni.append(button);
     }
 
 }
-
-// funzione per rimuovere i bottoni 
-
-function removeButtons() {
-
-    let bottoni = document.querySelectorAll('.answersbuttons')
-    // console.log(bottoni);
-
-    for (let bottone of bottoni) {
-
-        bottone.classList = 'disappear';
-    }
-}
-
 //funzione per controllare se la risposta è giusta 
 
 function checkAnswer(correctAnswerF, risposta) {
@@ -168,6 +156,17 @@ function checkAnswer(correctAnswerF, risposta) {
     console.log('giusta count ' + countRight);
     console.log('sbagliata count ' + countWrong);
 }
+
+
+// funzione per rimuovere i bottoni 
+
+function removeButtons() {
+    let divBottoni = document.querySelector('#buttons');
+    divBottoni.innerHTML = "";
+
+}
+
+
 
 //riempi percentuali
 
