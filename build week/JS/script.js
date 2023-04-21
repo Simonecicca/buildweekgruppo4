@@ -23,6 +23,7 @@ async function takeQuestion() {
         
     });
 
+
     // TIMER
 
 let timer = new Date("Jan 5, 2024 15:37:25").getTime();
@@ -82,7 +83,6 @@ function loadQuestions(domandeObj, visitedIndex) {
 }
 
 
-
 //funzione per caricare le risposte
 
 function load4Answers(domandeObj, indice) {
@@ -135,7 +135,7 @@ function createButtons(answers, requests, visitedIndex) {
                 page2.classList = 'disappear';
                 let page3 = document.querySelector('#page3');
                 page3.classList.remove('disappear');
-        }
+        }passedNotPassed(countRight);
 
         })
         divBottoni.append(button);
@@ -184,14 +184,6 @@ function riempiPercentuali() {
 }
 
 
-
-
-
-
-
-
-
-
 //funzione per contare le domande e giusto sbagliato
 
 function questionsCounters(lunghezzaArrDomande) {
@@ -202,7 +194,22 @@ function questionsCounters(lunghezzaArrDomande) {
     contatore.textContent = `QUESTION ` + count + '/' + lunghezzaArrDomande
 }
 
+//funzione per passed/notPassed esame
 
+function passedNotPassed(countRightF){
+    if(countRightF < 6){
+        let a = document.querySelector(".gratz");
+        a.textContent = "Ripassa dal via!"
+        
+        let b = document.querySelector(".passed");
+        b.textContent = "You didn't pass the exam! :( ";
+        
+        let c = document.querySelector(".certificate");
+        c.textContent = " ";
+        
+    }
+    
+}
 
 //caricare pagina 4
 
@@ -274,10 +281,3 @@ rateUs.addEventListener('click', function () {
 
 
 
-
-// count finale risposte date
-// let finalCountC = document.querySelector(".questionsC");
-// finalCountC.textContent = countRight + "questions";
-
-// let finalCountW = document.querySelector(".questionsW");
-// finalCountC.textContent = ccountWrong + "questions";
